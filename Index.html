@@ -1,187 +1,211 @@
 <!-- index.html - 주요 입력항목을 기준으로 임의의 내용이 기입된 목록 페이지
 ● 게시물 추가 시 입력하는 항목 중 4개 이상의 항목을 목록으로 표시 -->
 
+<!-- HOME  -->
 
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>Headers · Bootstrap v5.1</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
-
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 800px}
     
-
-    <!-- Bootstrap core CSS -->
-<link href="/Users/kimsolmi/Desktop/2023-2/실전프로젝트/Project2_final/headers.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
     
-    <!-- Custom styles for this template -->
-    <link href="headers.css" rel="stylesheet">
-  </head>
-  <body>
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
 
-
-<main>
-
-  <div class = "row ">
-    <h1 class="visually-hidden">단골 관리 서비스 </h1>
-  <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-       <div class="b-example-divider">
-        <ul class="horizontal-list">
-        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">No style</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Example</a></li>
-        <li class="nav-item"> <a href="#" class="nav-link">About</a></li> 
-      </ul> 
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>단골 관리 서비스</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Home</a></li>
+        <li><a href="#section2">NoStyle</a></li>
+        <li><a href="#section3">Example</a></li>
+        <li><a href="#section3">About</a></li>
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
       </div>
-  
-    </header>
-  </div> 
-</div>
+    </div>
 
+    <div class="col-sm-9">
+      <h4><small>[실전프로젝트] project2_final 22200103 김솔미 </small></h4>
+      <hr>
+      <h2>한동 네일 샵</h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Last updated time: Sep 27, 2023.</h5>
+      <h5><span class="label label-danger">Hello</span> <span class="label label-primary">Hi</span></h5><br>
+      <p>
+        
+        <table class="table">
+          <thead>
+            <button> 
+              <i class="fas fa-add"></i> ADD
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                        <button> 
+                          <style>
+                            /* 버튼 사이에 10px 마진을 추가합니다. */
+                            button {
+                              margin-right: 10px;
+                            }
+                          </style>
+              <i class="fas fa-sort"></i> Sort
+          </button>
+            <tr>
+              <th scope="col"> 번호 </th>
+              <th scope="col"> 이름 </th>
+              <th scope="col"> 성별 </th>
+              <th scope="col"> 나이 </th>
+              <th scope="col"> 전화번호 </th>
+              <th scope="col"> 생일 </th>
+              <th scope="col"> 방문횟수 </th>
+              <th scope="col"> 최근 방문일 </th>
+              <th scope="col"> Menu </th>
+
+            </tr>
+          </thead>
+        
+          <tbody id ="list-table">
+            <tr>
+         
+              <th scope="row">1</th>
+              <td scope="row">김솔미</td>
+              <td scope="row">여자</td>
+              <td scope="row">21</td>
+              <td scope="row">010-1234-5678</td>
+              <td scope="row">01/25</td>
+              <td scope="row">15번</td>
+              <td scope="row">2023/10/06</td>
+              <td scope="row">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+      <i class="fas fa-trash"></i> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+      <i class="fas fa-pencil"></i> 
+  </button>
+</td>
+              
+</head>
+            </tr>
+               <tr>
+              <th scope="row">2</th>
+              <td scope="row">성하은</td>
+              <td scope="row">여자</td>
+              <td scope="row">21</td>
+              <td scope="row">010-1234-5678</td>
+              <td scope="row">11/28</td>
+              <td scope="row">15번</td>
+              <td scope="row">2023/09/06</td>
+              <td scope="row">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+      <i class="fas fa-trash"></i> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+      <i class="fas fa-pencil"></i> 
+  </button>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td scope="row">김영빈</td>
+              <td scope="row">남자</td>
+              <td scope="row">21</td>
+              <td scope="row">010-1234-5678</td>
+              <td scope="row">03/25</td>
+              <td scope="row">3번</td>
+              <td scope="row">2023/10/01</td>
+              <td scope="row">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+      <i class="fas fa-trash"></i> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+      <i class="fas fa-pencil"></i> 
+  </button>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td scope="row">최성혁</td>
+              <td scope="row">남자</td>
+              <td scope="row">21</td>
+              <td scope="row">010-1234-5678</td>
+              <td scope="row">11/23</td>
+              <td scope="row">19번</td>
+              <td scope="row">2023/10/02</td>
+              <td scope="row">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+      <i class="fas fa-trash"></i> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+      <i class="fas fa-pencil"></i> 
+  </button>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td scope="row">김예진</td>
+              <td scope="row">여자</td>
+              <td scope="row">21</td>
+              <td scope="row">010-1234-5678</td>
+              <td scope="row">07/13</td>
+              <td scope="row">3번</td>
+              <td scope="row">2023/08/06</td>
+              <td scope="row">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+      <i class="fas fa-trash"></i> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+      <i class="fas fa-pencil"></i> 
+  </button>
+            </tr>
+          </tbody>
+        </table>
+      
+      </p>
+        </div>
+        </div>
+      </div>
+    </div>
  
+<footer class="container-fluid">
+  <p> ⓒ Copyright SolmiKim, lnc 2023 실전프로젝트</p>
+</footer>
 
-<table class="table">
-  <thead>
-    <tr>
-      <h2> 고객 명단 </h2>
-      <th scope="col"> 순차번호 </th>
-      <th scope="col"> 이름 </th>
-      <th scope="col"> 성별 </th>
-      <th scope="col"> 나이 </th>
-      <th scope="col"> 전화번호 </th>
-      <th scope="col"> 생일 </th>
-      <th scope="col"> 구매횟수 </th>
-      <th scope="col"> 최근 방문일 </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td scope="row">김솔미</td>
-      <td scope="row">여자</td>
-      <td scope="row">21</td>
-      <td scope="row">010-1234-5678</td>
-      <td scope="row">11/28</td>
-      <td scope="row">15번</td>
-      <td scope="row">2023/10/06</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td scope="row">성하은</td>
-      <td scope="row">여자</td>
-      <td scope="row">21</td>
-      <td scope="row">010-1234-5678</td>
-      <td scope="row">11/28</td>
-      <td scope="row">15번</td>
-      <td scope="row">2023/10/06</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td scope="row">김영빈</td>
-      <td scope="row">남자</td>
-      <td scope="row">21</td>
-      <td scope="row">010-1234-5678</td>
-      <td scope="row">11/28</td>
-      <td scope="row">15번</td>
-      <td scope="row">2023/10/06</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td scope="row">최성혁</td>
-      <td scope="row">남자</td>
-      <td scope="row">21</td>
-      <td scope="row">010-1234-5678</td>
-      <td scope="row">11/28</td>
-      <td scope="row">15번</td>
-      <td scope="row">2023/10/06</td>
-    </tr>
-
-
-    <tr>
-      <th scope="row">5</th>
-      <td scope="row">김광</td>
-      <td scope="row">여자</td>
-      <td scope="row">21</td>
-      <td scope="row">010-1234-5678</td>
-      <td scope="row">11/28</td>
-      <td scope="row">15번</td>
-      <td scope="row">2023/10/06</td>
-    </tr>
-    <tr>
-      <th scope="row">6</th>
-      <td scope="row">장소연</td>
-      <td scope="row">여자</td>
-      <td scope="row">21</td>
-      <td scope="row">010-1234-5678</td>
-      <td scope="row">11/28</td>
-      <td scope="row">15번</td>
-      <td scope="row">2023/10/06</td>
-    </tr>
-    <tr>
-      <th scope="row">7</th>
-      <td scope="row">고혜리</td>
-      <td scope="row">여자</td>
-      <td scope="row">21</td>
-      <td scope="row">010-1234-5678</td>
-      <td scope="row">11/28</td>
-      <td scope="row">15번</td>
-      <td scope="row">2023/10/06</td>
-    </tr>
-    <tr>
-      <th scope="row">8</th>
-      <td scope="row">김솔미</td>
-      <td scope="row">여자</td>
-      <td scope="row">21</td>
-      <td scope="row">010-1234-5678</td>
-      <td scope="row">11/28</td>
-      <td scope="row">15번</td>
-      <td scope="row">2023/10/06</td>
-    </tr>
-    <tr>
-      <th scope="row">9</th>
-      <td scope="row">김솔미</td>
-      <td scope="row">여자</td>
-      <td scope="row">21</td>
-      <td scope="row">010-1234-5678</td>
-      <td scope="row">11/28</td>
-      <td scope="row">15번</td>
-      <td scope="row">2023/10/06</td>
-    </tr>
-    <tr>
-      <th scope="row">10</th>
-      <td scope="row">김솔미</td>
-      <td scope="row">여자</td>
-      <td scope="row">21</td>
-      <td scope="row">010-1234-5678</td>
-      <td scope="row">11/28</td>
-      <td scope="row">15번</td>
-      <td scope="row">2023/10/06</td>
-    </tr>
-   
-  </tbody>
-</table>
+</body>
+</html>
 

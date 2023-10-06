@@ -40,3 +40,18 @@
 .horizontal-list li {
   margin-right: 150px; /* 각 항목 사이의 간격 조정 */
 }
+
+thead h2 {
+  font-size: 24px; /* 원하는 폰트 크기로 조절 */
+}
+
+/* 표의 헤더인 <th> 요소의 폰트 크기 조절 */
+thead th {
+  font-size: 20px; /* 원하는 폰트 크기로 조절 */
+}
+
+
+tbody th,
+tbody td {
+  font-size: 15px; /* 원하는 폰트 크기로 조절 */
+}
