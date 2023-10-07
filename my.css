@@ -55,3 +55,20 @@ tbody th,
 tbody td {
   font-size: 15px; /* 원하는 폰트 크기로 조절 */
 }
+
+
+/*
+font-family : 적용하고자 하는 폰트의 이름
+font-style : 폰트의 기본 스타일 (선택사항)
+font-weight : 폰트의 기본 굵기 (선택사항)
+src : 해당 폰트 파일의 위치
+url : 경로
+format : 폰트 파일 형식
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
+.nanum-gothic{ font-family: 'Nanum Gothic', sans-serif;}
+
+
+.nanum-gothic{ font-family: 'Nanum Gothic', sans-serif;}
