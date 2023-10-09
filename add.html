@@ -4,57 +4,291 @@
 ● [추가] 버튼을 누르면 “게시물이 추가됩니다” Alert 창 띄울 것 -->
 
 
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>게시물 추가</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+
+
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 800px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
 </head>
 <body>
-    <h1>단골 정보 등록</h1>
-    <form id="postForm" onsubmit="return validateForm()">
-        <!-- 양식 입력란을 여기에 추가합니다. -->
-        <label for="title">번호</label>
-        <input type="text" id="title" name="title" required>
-        <br>
-        <label for="content">이름</label>
-        <textarea id="content" name="content" required></textarea>
-        <br>
-        <label for="content">성별</label>
-        <textarea id="content" name="content" required></textarea>
-        <br>
-        <label for="content">나이</label>
-        <textarea id="content" name="content" required></textarea>
-        <br>
-        <label for="content">전화번호</label>
-        <textarea id="content" name="content" required></textarea>
-        <br>
-        <label for="content">생일</label>
-        <textarea id="content" name="content" required></textarea>
-        <br>
-        <label for="content">방문횟수</label>
-        <textarea id="content" name="content" required></textarea>
-        <br>
-        <label for="content">최근 방문일</label>
-        <textarea id="content" name="content" required></textarea>
-        <br>
-        <br>
-        <button type="submit">제출</button>
-    </form>
 
-    <script>
-        function validateForm() {
-            var title = document.getElementById('title').value;
-            var content = document.getElementById('content').value;
+  
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h3>단골 관리 서비스</h3>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="#section1">Home</a></li>
+        <li><a href="#section2">NoStyle</a></li>
+        <li><a href="#section3">Example</a></li>
+        <li><a href="#section4">About</a></li>
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
 
-            if (title.trim() === '' || content.trim() === '') {
-                alert('필수 항목을 모두 입력하세요.');
-                return false;
-            }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
 
-            alert('단골 정보가 성공적으로 추가되었습니다!');
-            return true;
+    <div class="col-sm-9">
+      <h4><small>[실전프로젝트] project2_final 22200103 김솔미 </small></h4>
+      <hr>
+      
+  </button>
+</td>
+              
+</head>
+           
+         
+
+          </tbody>
+          
+        </table>
+        
+        <button id="myButton" onclick="location.href ='./index.html'">홈화면으로 이동하기</button>
+
+        <script>
+            var button = document.getElementById("myButton");
+            button.addEventListener("click", function () {
+                /Users/kimsolmi/Desktop/2023-2/실전프로젝트/Project2_final/Index.html
+
+                window.location.href = "file:///Users/kimsolmi/Desktop/2023-2/실전프로젝트/Project2_final/Index.html";
+            });
+        </script>
+
+<h3>단골 정보 등록</h3>
+<form id="postForm" onsubmit="return validateForm()">
+    <!-- 양식 입력란을 여기에 추가합니다. -->
+    <table>
+        <tr>
+            <th>번호</th>
+            <td><input type="text" id="title" name="title" required></td>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <td><input type="text" id="title" name="title" required></td>
+        </tr>
+        <tr>
+            <th>성별</th>
+            <td>
+                <input type="radio" id="남성" name="man" value="man">
+                <label for="남성">남성</label>
+                <input type="radio" id="여성" name="man" value="woman">
+                <label for="여성">여성</label>
+            </td>
+        </tr>
+        <tr>
+            <th>나이</th>
+            <td><input type="text" id="title" name="title" required></td>
+        </tr>
+        <tr>
+            <th>전화번호</th>
+            <td><input type="text" id="title" name="title" required></td>
+        </tr>
+        <tr>
+            <th>생일</th>
+            <td>
+                <input type="date" id="date" min="1900-01-01">
+            </td>
+        </tr>
+        <tr>
+            <th>방문횟수</th>
+            <td><input type="text" id="title" name="title" required></td>
+        </tr>
+        <tr>
+            <th>최근 방문일</th>
+            <td>
+                <input type="date" id="date" min="1900-01-01">
+            </td>
+        </tr>
+    </table>
+    
+    <style>
+        table {
+            border-collapse: collapse; /* 테두리 간격을 없애기 위해 테두리를 합칩니다. */
+            width: 100%; /* 표의 폭을 100%로 설정하여 부모 요소에 맞게 조절합니다. */
         }
+    
+        th, td {
+            border: 2px solid black; /* 두꺼운 검은색 선으로 테두리를 설정합니다. */
+            padding: 8px; /* 셀 내부 여백을 설정합니다. */
+            text-align: left; /* 텍스트를 왼쪽 정렬합니다. */
+        }
+    
+        th {
+            background-color: #f2f2f2; /* 헤더 셀의 배경색을 설정합니다. */
+        }
+    
+    </style>
+    
+    
+    <script>
+        // 현재 날짜를 가져옵니다.
+        var currentDate = new Date();
+    
+        // 현재 날짜를 "YYYY-MM-DD" 형식의 문자열로 변환합니다.
+        var formattedDate = currentDate.toISOString().split('T')[0];
+    
+        // input 요소의 max 속성을 현재 날짜로 설정합니다.
+        document.getElementById('date').setAttribute('max', formattedDate);
     </script>
+    
+    <br>
+    <br>
+    <button type="submit">등록</button>
+</form>
+
+<script>
+    function validateForm() {
+        var title = document.getElementById('title').value;
+        var content = document.getElementById('content').value;
+
+        if (title.trim() === '' || content.trim() === '') {
+            alert('필수 항목을 모두 입력하세요.');
+            return false;
+        }
+
+        alert('단골 정보가 성공적으로 추가되었습니다!');
+        return true;
+    }
+</script>
+
+<script>
+    function validateForm() {
+        // 입력한 정보 가져오기
+        var title = document.getElementById('title').value;
+        var name = document.getElementById('name').value;
+        var gender = document.querySelector('input[name="man"]:checked').value;
+        var age = document.getElementById('age').value;
+        var phoneNumber = document.getElementById('phoneNumber').value;
+        var birthday = document.getElementById('date').value;
+        var visitCount = document.getElementById('visitCount').value;
+        var recentVisit = document.getElementById('recentVisit').value;
+
+        // 입력한 정보를 객체로 저장
+        var customerInfo = {
+            title: title,
+            name: name,
+            gender: gender,
+            age: age,
+            phoneNumber: phoneNumber,
+            birthday: birthday,
+            visitCount: visitCount,
+            recentVisit: recentVisit
+        };
+
+        // 저장된 정보를 배열로 가져오기 (이미 저장된 정보가 있을 수 있음)
+        var savedInfo = JSON.parse(localStorage.getItem('customerInfo')) || [];
+
+        // 새로운 정보를 배열에 추가
+        savedInfo.push(customerInfo);
+
+        // 배열을 다시 로컬 스토리지에 저장
+        localStorage.setItem('customerInfo', JSON.stringify(savedInfo));
+
+        // 알림 표시
+        alert('단골 정보가 성공적으로 추가되었습니다!');
+
+        // 폼 초기화
+        document.getElementById('postForm').reset();
+
+        return false;
+    }
+</script>
+
+
+      </p>
+        </div>
+        </div>
+      </div>
+    </div>
+ 
+<footer class="container-fluid">
+  <p>  copyright ⓒ 2023 KIM SOLMI ALl rights reserved. lnc 2023 실전프로젝트
+    <button> 
+      <i class="fas fa-smile-wink"></i> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+                  <style>
+                    
+                    button {
+                    
+                      margin-right: 5px;
+                    }
+                  </style>
+      
+  </button>
+  <button> 
+    <i class="fas fa-smile"></i> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      
+                <style>
+                
+                  button {
+                    margin-right: 5px;
+                  }
+                </style>
+    
+</button>
+<button> 
+  <i class="fas fa-smile"></i> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+              <style>
+               
+                button {
+                  margin-right: 5px;
+                }
+              </style>
+  
+</button>
+  </p>
+</footer>
+
 </body>
 </html>
+
+
+
 
