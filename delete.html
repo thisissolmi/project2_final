@@ -1,19 +1,15 @@
-<!-- edit.html - 임의로 정한 레코드의 모든 항목을 보여주면서 수정하는 폼을
-보여주는 Form 페이지
-● 필수 항목에 대해서 Validation Check Javascript 적용할 것
-● [수정] 버튼을 누르면 “게시물을 수정할까요?” Confirm 창 띄울 것 -->
+<!-- index.html - 주요 입력항목을 기준으로 임의의 내용이 기입된 목록 페이지
+● 게시물 추가 시 입력하는 항목 중 4개 이상의 항목을 목록으로 표시 -->
 
-<!-- add.html - index.html에서 [Add]를 눌렀을 때 나오는 페이지로, 하나의
-게시물에 필요한 모든 입력항목을 입력받는 Form 페이지
-● 필수 항목에 대해서 Validation Check Javascript 적용할 것
-● [추가] 버튼을 누르면 “게시물이 추가됩니다” Alert 창 띄울 것 -->
+<!-- HOME  -->
+
 
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>삭제 페이지</title>
+  <title>단골서비스</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -21,6 +17,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <style>
+
+
 
 
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
@@ -79,169 +77,231 @@
     <div class="col-sm-9">
       <h4><small>[실전프로젝트] project2_final 22200103 김솔미 </small></h4>
       <hr>
-      
-  </button>
-</td>
+      <h3>한동 네일 샵</h3>
+      <h5><span class="glyphicon glyphicon-time"></span> Last updated time: Sep 27, 2023.</h5>
+      <h5><span class="label label-danger">Hello</span> <span class="label label-primary">Hi</span></h5><br>
+      <p>
+        
+        <table class="table">
+          <thead>
+            <button id="addButton"> 
+              <i class="fas fa-plus"></i> 추가
+          </button>
+
+          <script>
+            document.getElementById('addButton').addEventListener('click', function() {
+                // 버튼을 클릭할 때 add.html 페이지로 이동합니다.
+                window.location.href = 'add.html';
+            });
+        </script>
+
+          <select name="listy">
+            <optgroup label="리스트">
+              <option value="1"> 최빈순 </option>
+              <option value="2"> 최신순 </option>
+              <option value="3"> 이름순 </option>
+            </optgroup>
+          </select>
+
+            <tr>
+              <th scope="col"> 번호 </th>
+              <th scope="col"> 이름 </th>
+              <th scope="col"> 성별 </th>
+              <th scope="col"> 나이 </th>
+              <th scope="col"> 전화번호 </th>
+              <th scope="col"> 생일 </th>
+              <th scope="col"> 방문횟수 </th>
+              <th scope="col"> 최근 방문일 </th>
+              <th scope="col"> Menu </th>
+
+            </tr>
+          </thead>
+        
+          <tbody id ="list-table">
+              <th scope="row">1</th>
+              <td scope="row">김솔미</td>
+              <td scope="row">여자</td>
+              <td scope="row">21세</td>
+              <td scope="row">010-1234-5678</td>
+              <td scope="row">01/25</td>
+              <td scope="row">15번</td>
+              <td scope="row">2023/10/06</td>
+
+              <td scope="row">
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+              <button id="trashButton1" onclick="confirmDelete()"> 
+                <i class="fas fa-trash"></i>
+              </button>
+              
+              <script>
+              function confirmDelete() {
+                  if (confirm("게시물을 삭제할까요?")) {
+                      window.location.href = 'delete.html'; // 예시로 페이지 이동하는 코드를 추가했습니다.
+                  } 
+              }
+              </script>
+              
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
+
+              <button id="editButton1"> 
+              <i class="fas fa-pencil"></i> 
+              </button>
+
+              <script>
+              document.getElementById('editButton1').addEventListener('click', function() {
+              window.location.href = 'edit.html';
+              });
+              </script>
+
+            </td>
+            
               
 </head>
-           
-         
+            </tr>
+               <tr>
+              <th scope="row">2</th>
+              <td scope="row">성하은</td>
+              <td scope="row">여자</td>
+              <td scope="row">29세</td>
+              <td scope="row">010-1234-5678</td>
+              <td scope="row">11/28</td>
+              <td scope="row">15번</td>
+              <td scope="row">2023/09/06</td>
+
+              <td scope="row">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button id="trashButton2" onclick="confirmDelete()"> 
+                  <i class="fas fa-trash"></i>
+                </button>
+                
+                <script>
+                function confirmDelete() {
+                    if (confirm("게시물을 삭제할까요?")) {
+                        window.location.href = 'delete.html'; // 예시로 페이지 이동하는 코드를 추가했습니다.
+                    }
+                }
+                </script>
+                
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
+  
+                <button id="editButton2"> 
+                <i class="fas fa-pencil"></i> 
+                </button>
+  
+                <script>
+                document.getElementById('editButton2').addEventListener('click', function() {
+                window.location.href = 'edit.html';
+                });
+                </script>
+  
+            </tr>
+
+
+
+            <tr>
+              <th scope="row">3</th>
+              <td scope="row">김영빈</td>
+              <td scope="row">남자</td>
+              <td scope="row">38세</td>
+              <td scope="row">010-1234-5678</td>
+              <td scope="row">03/25</td>
+              <td scope="row">3번</td>
+              <td scope="row">2023/10/01</td>
+              <td scope="row">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                
+                <button id="trashButton3" onclick="confirmDelete()"> 
+                  <i class="fas fa-trash"></i>
+                </button>
+                
+                <script>
+                function confirmDelete() {
+                    if (confirm("게시물을 삭제할까요?")) {
+                        window.location.href = 'delete.html'; // 예시로 페이지 이동하는 코드를 추가했습니다.
+                    }
+                }
+                </script>
+                
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">    
+  
+                <button id="editButton3"> 
+                <i class="fas fa-pencil"></i> 
+                </button>
+  
+                <script>
+                document.getElementById('editButton3').addEventListener('click', function() {
+                window.location.href = 'edit.html';
+                });
+                </script>
+  
+  
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td scope="row">최성혁</td>
+              <td scope="row">남자</td>
+              <td scope="row">26세</td>
+              <td scope="row">010-1234-5678</td>
+              <td scope="row">11/23</td>
+              <td scope="row">19번</td>
+              <td scope="row">2023/10/02</td>
+              <td scope="row">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+      <i class="fas fa-trash"></i> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+      <i class="fas fa-pencil"></i> 
+  </button>
+            </tr>
+
+            <tr>
+              <th scope="row">5</th>
+              <td scope="row">김예진</td>
+              <td scope="row">여자</td>
+              <td scope="row">16세</td>
+              <td scope="row">010-1234-5678</td>
+              <td scope="row">07/13</td>
+              <td scope="row">3번</td>
+              <td scope="row">2023/08/06</td>
+              <td scope="row">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button>  <i class="fas fa-trash"></i> 
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                <button> 
+                <i class="fas fa-pencil"></i> 
+               </button>
+            </tr>
+
+            
+
 
           </tbody>
           
         </table>
+
+        <div class = "button-container" style="text-align: center;">
+          <button> 
+            <i class="fas fa-arrow-alt-circle-left"></i> 
+           </button>
+          <button> 
+            <i class="fas fa-1"></i> 
+           </button>
+           <button> 
+            <i class="fas fa-2"></i> 
+           </button>
+           <button> 
+            <i class="fas fa-3"></i> 
+           </button>
+          
+           <button> 
+            <i class="fas fa-arrow-alt-circle-right"></i> 
+           </button>
+        </div>
         
-        <button id="myButton" onclick="location.href ='./index.html'">홈화면으로 이동하기</button>
-
-        <script>
-            var button = document.getElementById("myButton");
-            button.addEventListener("click", function () {
-                /Users/kimsolmi/Desktop/2023-2/실전프로젝트/Project2_final/Index.html
-
-                window.location.href = "file:///Users/kimsolmi/Desktop/2023-2/실전프로젝트/Project2_final/Index.html";
-            });
-        </script>
-
-<h3>단골 정보 삭제</h3>
-<form id="postForm" onsubmit="return validateForm()">
-    
-    <table>
-        <tr>
-            <th>번호</th>
-            <td><input type="text" id="title" name="title" required></td>
-        </tr>
-        <tr>
-            <th>이름</th>
-            <td><input type="text" id="title" name="title" required></td>
-        </tr>
-        <tr>
-            <th>성별</th>
-            <td>
-                <input type="radio" id="남성" name="man" value="man">
-                <label for="남성">남성</label>
-                <input type="radio" id="여성" name="man" value="woman">
-                <label for="여성">여성</label>
-            </td>
-        </tr>
-        <tr>
-            <th>나이</th>
-            <td><input type="text" id="title" name="title" required></td>
-        </tr>
-        <tr>
-            <th>전화번호</th>
-            <td><input type="text" id="title" name="title" required></td>
-        </tr>
-        <tr>
-            <th>생일</th>
-            <td>
-                <input type="date" id="date" min="1900-01-01">
-            </td>
-        </tr>
-        <tr>
-            <th>방문횟수</th>
-            <td><input type="text" id="title" name="title" required></td>
-        </tr>
-        <tr>
-            <th>최근 방문일</th>
-            <td>
-                <input type="date" id="date" min="1900-01-01">
-            </td>
-        </tr>
-    </table>
-    
-    <style>
-        table {
-            border-collapse: collapse; /* 테두리 간격을 없애기 위해 테두리를 합칩니다. */
-            width: 100%; /* 표의 폭을 100%로 설정하여 부모 요소에 맞게 조절합니다. */
-        }
-    
-        th, td {
-            border: 2px solid black; /* 두꺼운 검은색 선으로 테두리를 설정합니다. */
-            padding: 8px; /* 셀 내부 여백을 설정합니다. */
-            text-align: left; /* 텍스트를 왼쪽 정렬합니다. */
-        }
-    
-        th {
-            background-color: #f2f2f2; /* 헤더 셀의 배경색을 설정합니다. */
-        }
-    
-    </style>
-    
-    
-    <script>
-        // 현재 날짜를 가져옵니다.
-        var currentDate = new Date();
-    
-        // 현재 날짜를 "YYYY-MM-DD" 형식의 문자열로 변환합니다.
-        var formattedDate = currentDate.toISOString().split('T')[0];
-    
-        // input 요소의 max 속성을 현재 날짜로 설정합니다.
-        document.getElementById('date').setAttribute('max', formattedDate);
-    </script>
-    
-    <br>
-    <br>
-    <button type="submit">삭제</button>
-</form>
-
-<script>
-    function validateForm() {
-        var title = document.getElementById('title').value;
-        var content = document.getElementById('content').value;
-
-        if (title.trim() === '' || content.trim() === '') {
-            alert('필수 항목을 모두 입력하세요.');
-            return false;
-        }
-
-        alert('단골 정보가 성공적으로 추가되었습니다!');
-        return true;
-    }
-</script>
-
-<script>
-    function validateForm() {
-        // 입력한 정보 가져오기
-        var title = document.getElementById('title').value;
-        var name = document.getElementById('name').value;
-        var gender = document.querySelector('input[name="man"]:checked').value;
-        var age = document.getElementById('age').value;
-        var phoneNumber = document.getElementById('phoneNumber').value;
-        var birthday = document.getElementById('date').value;
-        var visitCount = document.getElementById('visitCount').value;
-        var recentVisit = document.getElementById('recentVisit').value;
-
-        // 입력한 정보를 객체로 저장
-        var customerInfo = {
-            title: title,
-            name: name,
-            gender: gender,
-            age: age,
-            phoneNumber: phoneNumber,
-            birthday: birthday,
-            visitCount: visitCount,
-            recentVisit: recentVisit
-        };
-
-        // 저장된 정보를 배열로 가져오기 (이미 저장된 정보가 있을 수 있음)
-        var savedInfo = JSON.parse(localStorage.getItem('customerInfo')) || [];
-
-        // 새로운 정보를 배열에 추가
-        savedInfo.push(customerInfo);
-
-        // 배열을 다시 로컬 스토리지에 저장
-        localStorage.setItem('customerInfo', JSON.stringify(savedInfo));
-
-        // 알림 표시
-        alert('단골 정보가 성공적으로 추가되었습니다!');
-
-        // 폼 초기화
-        document.getElementById('postForm').reset();
-
-        return false;
-    }
-</script>
-
+ 
 
       </p>
         </div>
@@ -249,67 +309,99 @@
       </div>
     </div>
  
-    <footer class="container-fluid">
-      <footer>
-        <h>copyright ⓒ 2023 KIM SOLMI ALl rights reserved. lnc 2023 실전프로젝트
-          <button> 
-            <i class="fas fa-smile-wink"></i> 
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-              
-                        <style>
-    
-    
-    footer {
-      text-align: center;
-      padding: 5px;
-      /* background-color: #abbaba; */
-      color: #ffffff;
-    }
-                        
-                          button {
-                          
-                            margin-right: 5px;
-                          }
-                        </style>
-    
-            
-        </button>
-        <button> 
-          <i class="fas fa-smile"></i> 
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-            
-                      <style>
-                      
-                        button {
-                          margin-right: 5px;
-                        }
-                      </style>
-          
-      </button>
-      
+
+   
+<footer class="container-fluid">
+  <footer>
+    <h>copyright ⓒ 2023 KIM SOLMI ALl rights reserved. lnc 2023 실전프로젝트
       <button> 
-        <i class="fas fa-smile"></i> 
+        <i class="fas fa-smile-wink"></i> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
           
                     <style>
-                     
+
+
+footer {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  text-align: center;
+  padding: 10px;
+  /* background-color: #abbaba; */
+  color: #ffffff;
+}
+                    
                       button {
+                      
                         margin-right: 5px;
                       }
                     </style>
+
         
-      </button>
-      </footer>
-      
+    </button>
+    <button> 
+      <i class="fas fa-smile"></i> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         
+                  <style>
+                  
+                    button {
+                      margin-right: 5px;
+                    }
+                  </style>
       
-      </h>
-    </footer>
+  </button>
+  
+  <button> 
+    <i class="fas fa-smile"></i> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      
+                <style>
+                 
+                  button {
+                    margin-right: 5px;
+                  }
+                </style>
     
+  </button>
+  </footer>
+  
+    
+  
+  </h>
+</footer>
 
 </body>
 </html>
 
+<!-- <script>
+    // 로컬 스토리지에서 저장된 정보 가져오기
+    var savedInfo = JSON.parse(localStorage.getItem('customerInfo')) || [];
 
+    // 표 행에 정보 추가하기
+    var table = document.querySelector('#customerTable tbody');
 
+    savedInfo.forEach(function (info, index) {
+        var row = table.insertRow(-1); // -1을 사용하여 마지막 행에 추가
+
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7);
+
+        cell1.innerHTML = info.title;
+        cell2.innerHTML = info.name;
+        cell3.innerHTML = info.gender;
+        cell4.innerHTML = info.age;
+        cell5.innerHTML = info.phoneNumber;
+        cell6.innerHTML = info.birthday;
+        cell7.innerHTML = info.visitCount;
+        cell8.innerHTML = info.recentVisit;
+    });
+</script> -->
 
