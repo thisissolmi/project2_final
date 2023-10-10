@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>단골 정보 등록</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -98,7 +98,8 @@
         </script>
 
 <h3>단골 정보 등록</h3>
-<form id="postForm" onsubmit="return validateForm()">
+<form id="postForm" onsubmit="return validateAndSubmitForm()">
+
     <!-- 양식 입력란을 여기에 추가합니다. -->
     <table>
         <tr>
@@ -107,24 +108,24 @@
         </tr>
         <tr>
             <th>이름</th>
-            <td><input type="text" id="title" name="title" required></td>
+            <td><input type="text" id="name" name="name" required></td>
         </tr>
         <tr>
             <th>성별</th>
             <td>
-                <input type="radio" id="남성" name="man" value="man">
+                <input type="radio" id="gender" name="man" value="man">
                 <label for="남성">남성</label>
-                <input type="radio" id="여성" name="man" value="woman">
+                <input type="radio" id="gender" name="man" value="woman">
                 <label for="여성">여성</label>
             </td>
         </tr>
         <tr>
             <th>나이</th>
-            <td><input type="text" id="title" name="title" required></td>
+            <td><input type="text" id="age" name="age" required></td>
         </tr>
         <tr>
             <th>전화번호</th>
-            <td><input type="text" id="title" name="title" required></td>
+            <td><input type="text" id="phoneNumber" name="phoneNumber" required></td>
         </tr>
         <tr>
             <th>생일</th>
@@ -134,12 +135,12 @@
         </tr>
         <tr>
             <th>방문횟수</th>
-            <td><input type="text" id="title" name="title" required></td>
+            <td><input type="text" id="visitCount" name="visitCount" required></td>
         </tr>
         <tr>
             <th>최근 방문일</th>
             <td>
-                <input type="date" id="date" min="1900-01-01">
+                <input type="date" id="recentVisit" min="1900-01-01">
             </td>
         </tr>
     </table>
@@ -195,47 +196,50 @@
 </script>
 
 <script>
-    function validateForm() {
-        // 입력한 정보 가져오기
-        var title = document.getElementById('title').value;
-        var name = document.getElementById('name').value;
-        var gender = document.querySelector('input[name="man"]:checked').value;
-        var age = document.getElementById('age').value;
-        var phoneNumber = document.getElementById('phoneNumber').value;
-        var birthday = document.getElementById('date').value;
-        var visitCount = document.getElementById('visitCount').value;
-        var recentVisit = document.getElementById('recentVisit').value;
+  function validateAndSubmitForm() {
+      // 입력한 정보 가져오기
+      var title = document.getElementById('title').value;
+      var name = document.getElementById('name').value;
+      var gender = document.querySelector('input[name="man"]:checked').value;
+      var age = document.getElementById('age').value;
+      var phoneNumber = document.getElementById('phoneNumber').value;
+      var birthday = document.getElementById('date').value;
+      var visitCount = document.getElementById('visitCount').value;
+      var recentVisit = document.getElementById('recentVisit').value;
 
-        // 입력한 정보를 객체로 저장
-        var customerInfo = {
-            title: title,
-            name: name,
-            gender: gender,
-            age: age,
-            phoneNumber: phoneNumber,
-            birthday: birthday,
-            visitCount: visitCount,
-            recentVisit: recentVisit
-        };
+      // 입력한 정보를 객체로 저장
+      var customerInfo = {
+          title: title,
+          name: name,
+          gender: gender,
+          age: age,
+          phoneNumber: phoneNumber,
+          birthday: birthday,
+          visitCount: visitCount,
+          recentVisit: recentVisit
+      };
 
-        // 저장된 정보를 배열로 가져오기 (이미 저장된 정보가 있을 수 있음)
-        var savedInfo = JSON.parse(localStorage.getItem('customerInfo')) || [];
+      // 저장된 정보를 배열로 가져오기 (이미 저장된 정보가 있을 수 있음)
+      var savedInfo = JSON.parse(localStorage.getItem('customerInfo')) || [];
 
-        // 새로운 정보를 배열에 추가
-        savedInfo.push(customerInfo);
+      // 새로운 정보를 배열에 추가
+      savedInfo.push(customerInfo);
 
-        // 배열을 다시 로컬 스토리지에 저장
-        localStorage.setItem('customerInfo', JSON.stringify(savedInfo));
+      // 배열을 다시 로컬 스토리지에 저장
+      localStorage.setItem('customerInfo', JSON.stringify(savedInfo));
 
-        // 알림 표시
-        alert('단골 정보가 성공적으로 추가되었습니다!');
+      // 알림 표시
+      alert('단골 정보가 성공적으로 추가되었습니다!');
 
-        // 폼 초기화
-        document.getElementById('postForm').reset();
-
-        return false;
-    }
+      // 폼 초기화
+      document.getElementById('postForm').reset();
+      
+  
+      
+      return false;
+  }
 </script>
+
 
 
       </p>
@@ -244,47 +248,63 @@
       </div>
     </div>
  
-<footer class="container-fluid">
-  <p>  copyright ⓒ 2023 KIM SOLMI ALl rights reserved. lnc 2023 실전프로젝트
-    <button> 
-      <i class="fas fa-smile-wink"></i> 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <footer class="container-fluid">
+      <footer>
+        <h>copyright ⓒ 2023 KIM SOLMI ALl rights reserved. lnc 2023 실전프로젝트
+          <button> 
+            <i class="fas fa-smile-wink"></i> 
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+              
+                        <style>
+    
+    
+    footer {
+      text-align: center;
+      padding: 5px;
+      /* background-color: #abbaba; */
+      color: #ffffff;
+    }
+                        
+                          button {
+                          
+                            margin-right: 5px;
+                          }
+                        </style>
+    
+            
+        </button>
+        <button> 
+          <i class="fas fa-smile"></i> 
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+            
+                      <style>
+                      
+                        button {
+                          margin-right: 5px;
+                        }
+                      </style>
+          
+      </button>
+      
+      <button> 
+        <i class="fas fa-smile"></i> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+          
+                    <style>
+                     
+                      button {
+                        margin-right: 5px;
+                      }
+                    </style>
         
-                  <style>
-                    
-                    button {
-                    
-                      margin-right: 5px;
-                    }
-                  </style>
+      </button>
+      </footer>
       
-  </button>
-  <button> 
-    <i class="fas fa-smile"></i> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
       
-                <style>
-                
-                  button {
-                    margin-right: 5px;
-                  }
-                </style>
+      </h>
+    </footer>
     
-</button>
-<button> 
-  <i class="fas fa-smile"></i> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-              <style>
-               
-                button {
-                  margin-right: 5px;
-                }
-              </style>
-  
-</button>
-  </p>
-</footer>
 
 </body>
 </html>
